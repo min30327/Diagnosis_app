@@ -16,6 +16,7 @@ textarea{
 .fwn{
 	font-weight: normal;
 }
+
 a{
    @include link_color($link_color);
 }

@@ -8,11 +8,24 @@
     }]);
     @author 2014 Mineo Okuda.
 **/
- 	App = angular.module('App',[]);
+ 	App = angular.module('App',['ngAnimate']);
     App.controller('Diagnosis',['$scope','$filter',function($scope,$filter){
-        $scope.start = false;
+        $scope.stage  = [];
+        $scope.bgColor = getRandomNum();
+
         $scope.init = function(){
-            $scope.start = true;
+            $scope.stage[0] = true;
+            $scope.stage[1] = true;
+            $scope.bgColor = getRandomNum();
         }
+        $scope.next_stage = function($num){
+            $scope.stage[$num] = true;
+            $scope.bgColor = getRandomNum();
+        }
+        
+
+        function getRandomNum(){
+            return Math.floor((Math.random()*6)+1);
+        };
     }]);
  	

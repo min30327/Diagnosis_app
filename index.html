@@ -18,7 +18,7 @@
 		<!-- mock -->
 		<div class="page-introduction jumbotron animate-show" ng-show="!start">
 			<div class="container">
-				<h1 class="mb30">性格タイプ診断 <small>from Jungian psychology</small></h1>
+				<h1 class="mb50">性格タイプ診断 <small>from Jungian psychology</small></h1>
 				<button class="btn btn-lg btn-default btn-block" ng-click="init()">はじめる</button>
 			</div>
 		</div>
@@ -31,40 +31,32 @@
 					</div> 
 				</div>
 				<div class="mb20">
-					<button class="btn btn-block btn-lg btn-default" ng-click="answer($index,0)">はい</button>
+					<button class="btn btn-block btn-lg btn-default" ng-click="answer($index,2)">はい</button>
 				</div>
 				<div class="mb20">
 					<button class="btn btn-block btn-lg btn-default" ng-click="answer($index,1)">だいたいあってる</button>
 				</div>
 				<div class="mb20">
-					<button class="btn btn-block btn-lg btn-default" ng-click="answer($index,2)">そうでもない</button>
+					<button class="btn btn-block btn-lg btn-default" ng-click="answer($index,-1)">そうでもない</button>
 				</div>
 				<div class="mb20">
-					<button class="btn btn-block btn-lg btn-default" ng-click="answer($index,3)">いいえ</button>
+					<button class="btn btn-block btn-lg btn-default" ng-click="answer($index,-2)">いいえ</button>
 				</div>
 				<p class="text-right">
 					{{$index}} / {{length}}
 				</p>
 			</div>
 		</div>
-		<div class="animate-show page" ng-show="last">
+		<div class="animate-show page" ng-show="end">
 			<div class="container">
 				<div class="panel panel-default">
 					<div class="panel-body">
-						<h4>Result</h4>
+						<h4>あなたは...{{results.type}}タイプ</h4>
+						{{results.value}}
 					</div> 
 				</div>
-				<div class="mb20">
-					<button class="btn btn-block btn-lg btn-default" ng-click="answer($index,0)">はい</button>
-				</div>
-				<div class="mb20">
-					<button class="btn btn-block btn-lg btn-default" ng-click="answer($index,1)">だいたいあってる</button>
-				</div>
-				<div class="mb20">
-					<button class="btn btn-block btn-lg btn-default" ng-click="answer($index,2)">そうでもない</button>
-				</div>
-				<div class="mb20">
-					<button class="btn btn-block btn-lg btn-default" ng-click="answer($index,3)">いいえ</button>
+				<div class="mb20 text-right" ng-repeat="(key,val) in resource">
+					{{key}} {{score[$index]}} 点
 				</div>
 			</div>
 		</div>

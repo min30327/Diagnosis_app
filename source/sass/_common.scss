@@ -1,1 +1,153 @@
+body{
+	width: 100%;
+	overflow-x:hidden;
+	background: #74B5F6;
+	color: #FFF;
+	font-size: 18px;
+	line-height: 180%;
+	@include easeInOutCubic();
+}
+.bg-1{
+	background: #74B5F6;
+}
+.bg-2{
+	background: #74F674;
+}
+.bg-3{
+	background: #B5F674;
+}
+.bg-4{
+	background: #DCA199;
+}
+.bg-5{
+	background: #74F6B5;
+}
+.bg-6{
+	background: #DCA199;
+}
+.jumbotron{
+	background: none;
+	 h1{
+		font-size: 22px;
+	}
+	small{
+		display: block;
+		color: #fff;
+	}
+}
+h1,h2,h3,h4,h5{
+	line-height: 180%;
+}
+.btn{
+	background: none;
+	border-color: #fff;
+	color: #fff;
+	@include easeInOutCubic();
+	-webkit-border-radius: 10px;
+		    border-radius: 10px;
+	&:hover,&:active{
+		color: #fff;
+		background: none;
+		border-color: #fff;
+		-webkit-border-radius: 30px;
+		        border-radius: 30px;
+		
+	}
+}
+.label.label-info{
+	background: none;
+	font-weight: normal;
+	font-size: 22px;
+	padding: 0;
+}
+.animate-show,.ng-hide {
+	position: relative;
+	left: 0;
+	top: 0;
+	@include easeInOutQuart();
+	display:block!important;
+	
+	&.ng-hide-add {
+ 		opacity:0;
+		left: -500px;
+	}
+	&.ng-hide-remove {
+ 		opacity:0;
+		left: 500px;
+	}
 
+}
+.animate-show{
+	opacity:1;
+	left:0;
+	z-index: 2;	
+}
+
+.ng-hide{
+	opacity:0;
+	left: -500px;
+	z-index: 1;
+}
+.page-introduction{
+	width: 100%;
+	padding-top: 30px;
+}
+.page{
+	@extend .page-introduction;
+	padding-bottom: 60px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	min-height: 100%;
+}
+.panel-default{
+	-webkit-box-shadow: none;
+	        box-shadow: none;
+	border-color: #FFF;
+	background: none;
+}
+.controls{
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 45px;
+		&.animate-show,&.ng-hide {
+		position: fixed;
+		left: 0;
+		bottom: 0;
+		top:inherit;
+		@include easeInOutQuart();
+		display:block!important;
+		
+		&.ng-hide-add {
+	 		opacity:0;
+			bottom: -50px;
+		}
+		&.ng-hide-remove {
+	 		opacity:0;
+			bottom: 0;
+		}
+
+	}
+	.btn-group>.btn{
+		@include easeInOutCubic();
+		background: #FFF;
+		color: #6EB2DF;
+		border-color: #ddd;
+		-webkit-border-radius: 0!important;
+		        border-radius: 0!important;
+		    &:hover{
+		    	background: #f8f8f8;
+		    	border-color: #ddd;
+		    }
+	}
+	.btn-group>.btn-group:first-child .btn {
+		border-left: none;
+		border-right: none;
+	}
+	.btn-group>.btn-group:last-child .btn {
+		border-right: none;
+		border-left: none;
+	}
+}

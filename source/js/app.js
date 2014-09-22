@@ -42,6 +42,10 @@
             $scope.now = 0;
             $scope.start = false;
             $scope.score = [0,0,0,0,0,0,0,0,0];
+            $scope.results = {
+            type : '',
+            value :''
+        }
             addBgClass();
         }
 
